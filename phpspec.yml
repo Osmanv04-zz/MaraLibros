@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: MaraLibros
+        psr4_prefix: MaraLibros
+        src_path: app
