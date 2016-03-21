@@ -16,6 +16,7 @@ Route::get('controlador/{nombre}', 'PruebaController@nombre');
 Route::resource('libro','LibroController');*/
 
 Route::get('/','FrontController@index');
+Route::get('contacto','FrontController@contacto');
 
 
 

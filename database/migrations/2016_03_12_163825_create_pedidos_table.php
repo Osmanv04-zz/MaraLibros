@@ -12,12 +12,13 @@ class CreatePedidosTable extends Migration
      */
     public function up()
     {
-        Schema::create('pedidos', function (Blueprint $table) {
+        Schema::create('pedido', function (Blueprint $table) {
             $table->increments('IDPedido');
             $table->integer('status');
+            $table->date('fecha_pedido');
             $table->integer('IDInstitucion')->unsigned();
 
-            $table->foreign('IDInstitucion')->references('IDInstitucion')->on('institucions');
+            $table->foreign('IDInstitucion')->references('IDInstitucion')->on('institucion');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreatePedidosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('pedidos');
+        Schema::drop('pedido');
     }
 }

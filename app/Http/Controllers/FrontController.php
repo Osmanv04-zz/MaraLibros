@@ -19,6 +19,11 @@ class FrontController extends Controller
         return view('index');
     }
 
+    public function contacto(){
+
+        return view('contacto');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

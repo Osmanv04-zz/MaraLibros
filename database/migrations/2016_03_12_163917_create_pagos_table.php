@@ -15,9 +15,10 @@ class CreatePagosTable extends Migration
         Schema::create('pagos', function (Blueprint $table) {
             $table->increments('IDPagos');
             $table->float('monto_total');
+            $table->date('fecha_pago');
             $table->integer('IDPedido')->unsigned();
 
-            $table->foreign('IDPedido')->references('IDPedido')->on('pedidos');
+            $table->foreign('IDPedido')->references('IDPedido')->on('pedido');
             $table->timestamps();
         });
     }

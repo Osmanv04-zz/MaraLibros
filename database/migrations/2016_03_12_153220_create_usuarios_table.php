@@ -12,9 +12,9 @@ class CreateUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('usuario', function (Blueprint $table) {
             $table->increments('IDUsuario');
-            $table->string('usuario');
+            $table->string('usuario')->unique();
             $table->string('clave');
             $table->tinyInteger('admin');
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('usuarios');
+        Schema::drop('usuario');
     }
 }

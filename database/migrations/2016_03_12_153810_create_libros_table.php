@@ -12,8 +12,15 @@ class CreateLibrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('libros', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('libro', function (Blueprint $table) {
+            $table->increments('IDLibro');
+            $table->string('titulo');
+            $table->string('autor');
+            $table->integer('anoEdicion');
+            $table->string('grado');
+            $table->float('precio');
+            $table->string('url');
+            $table->integer('nroEdicion');
             $table->timestamps();
         });
     }
@@ -25,6 +32,6 @@ class CreateLibrosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('libros');
+        Schema::drop('libro');
     }
 }

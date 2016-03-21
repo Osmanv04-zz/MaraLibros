@@ -12,15 +12,17 @@ class CreateInstitucionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('institucions', function (Blueprint $table) {
+        Schema::create('institucion', function (Blueprint $table) {
             $table->increments('IDInstitucion');
             $table->string('nombre');
             $table->string('rif');
-            $table->string('correo');
+            $table->string('correo')->unique();
             $table->string('direccion');
             $table->integer('IDUsuario')->unsigned();
+            $table->boolean('suscrito');
+            $table->date('fecha_sus');
 
-            $table->foreign('IDUsuario')->references('IDUsuario')->on('usuarios');
+            $table->foreign('IDUsuario')->references('IDUsuario')->on('usuario');
             $table->timestamps();
         });
     }
@@ -32,6 +34,6 @@ class CreateInstitucionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('institucions');
+        Schema::drop('institucion');
     }
 }
