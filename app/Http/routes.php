@@ -18,6 +18,10 @@ Route::resource('libro','LibroController');*/
 Route::get('/','FrontController@index');
 Route::get('contacto','FrontController@contacto');
 
+Route::get('admin','FrontController@admin');
+
+Route::resource('institucion','ControladorInstitucion');
+
 
 
 Route::get('prueba',function(){

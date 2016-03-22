@@ -18,11 +18,10 @@ class CreateInstitucionsTable extends Migration
             $table->string('rif');
             $table->string('correo')->unique();
             $table->string('direccion');
-            $table->integer('IDUsuario')->unsigned();
+            $table->string('clave');
             $table->boolean('suscrito');
             $table->date('fecha_sus');
 
-            $table->foreign('IDUsuario')->references('IDUsuario')->on('usuario');
             $table->timestamps();
         });
     }

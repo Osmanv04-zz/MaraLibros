@@ -1,33 +1,6 @@
 @extends ('layouts.principal')
 @section('content')
-    <div class="header">
-        <div class="top-header">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt="" /></a>
-                <p>MaraLibros C.A </p>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Inicio</a></li>
 
-
-                    <li><a href="#about">Catalogo</a></li>
-                    <li><a href="#contact">Contactenos</a></li>
-                    <li><a href="#contact">Iniciar Sesion</a></li>
-                </ul>
-                <div class="navbar-form navbar-right" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Buscar Libro...">
-
-                    </div>
-                    <button type="submit" class="btn btn-default">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-
-                </div>
-            </div><!--/.nav-collapse -->
-
-        </div>
         <div class="container">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -106,10 +79,6 @@
             <script type="text/javascript" src="js/jquery.flexisel.js"></script>
         </div>
         -->
-    </div>
-
-    <div class="textopresentacion">
-        <p>hola como estan</p>
     </div>
     <div class="more-reviews">
         <ul id="flexiselDemo2">

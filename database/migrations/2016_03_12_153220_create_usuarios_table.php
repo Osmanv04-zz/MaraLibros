@@ -12,11 +12,10 @@ class CreateUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
-            $table->increments('IDUsuario');
+        Schema::create('userAdmin', function (Blueprint $table) {
+            $table->increments('IDAdmin');
             $table->string('usuario')->unique();
             $table->string('clave');
-            $table->tinyInteger('admin');
             $table->timestamps();
         });
     }
