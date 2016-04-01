@@ -2,10 +2,12 @@
 <html>
 <head>
     <title>MaraLibros C.A</title>
+    @include('institucion.createModal')
     {!!Html::style('css/bootstrap.css')!!}
     {!!Html::style('css/style.css')!!}
     {!!Html::script('js/jquery.min.js') !!}
     {!!Html::script('js/bootstrap.min.js') !!}
+
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -35,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="#about">Catalogo</a></li>
                         <li><a href="#contact">Contactenos</a></li>
                         <li><a href="#contact">Iniciar Sesion</a></li>
-                        <li><a href="/institucion/create">Registrarse</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">Registrarse</a></li>
                     </ul>
                     <div class="navbar-form navbar-right" role="search">
                         <div class="form-group">
@@ -51,22 +53,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             </div>
             @yield('content')
-        <div class="news">
+            <div class="news">
 
-            <div class="col-md-6 news-right-grid">
+                <div class="col-md-6 news-right-grid">
 
-                <div class="news-grid">
+                    <div class="news-grid">
 
+                    </div>
+                    <a class="more" href="#">MORE</a>
                 </div>
-                <a class="more" href="#">MORE</a>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
-        </div>
 
+        </div>
     </div>
 </div>
-</div>
-
+{!!Html::script('js/script.js') !!}
 <div class="clearfix"></div>
 </body>
 </html>

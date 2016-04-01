@@ -1,5 +1,14 @@
 @extends('layouts.principal')
+<?php $message= Session::get('message')?>
+@if('message'=='store')
+    <div class="alert alert-succes alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        Listo! Revise su correo para activar su cuenta
+    </div>
+
+@endif
 @section('content')
+
 
     {!! Form::open(['route'=>'institucion.store','method'=>'POST']) !!}
     <div class="form-group">
@@ -18,7 +27,7 @@
 
     <div class="form-group">
         {!! Form::label('Direccion') !!}
-        {!! Form::email('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese su direccion']) !!}
+        {!! Form::text('direccion',null,['class'=>'form-control','placeholder'=>'Ingrese su direccion']) !!}
     </div>
 
     <div class="form-group">
@@ -31,4 +40,5 @@
     </div>
     {!! Form::submit('Registrar',['class'=>'btn btn-primary']) !!}
     {!! Form::close() !!}
+
 @endsection

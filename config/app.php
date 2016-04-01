@@ -137,6 +137,10 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        'Illuminate\View\ViewServiceProvider',
+        'Illuminate\Html\HtmlServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
+        'Mitul\Generator\GeneratorServiceProvider',
 
         /*
          * Application Service Providers...
@@ -196,6 +200,9 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Form'  => 'Illuminate\Html\FormFacade',
+        'HTML'  => 'Illuminate\Html\HtmlFacade',
+        'Flash' => 'Laracasts\Flash\Flash'
 
     ],
 

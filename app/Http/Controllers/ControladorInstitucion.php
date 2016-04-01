@@ -26,7 +26,7 @@ class ControladorInstitucion extends Controller
      */
     public function create()
     {
-        return view('institucion.create');
+        return view('institucion.createModal');
     }
 
     /**
@@ -35,8 +35,17 @@ class ControladorInstitucion extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+        echo "usuario en store";
+        if($request->ajax()){
+            echo "entro en el ajax";
+            return response()->json([
+                "mensaje"=>$request->all()
+            ]);
+        }
+        else
+            echo 'no entro en el ajax';
+       /**
         \MaraLibros\Institucion::create([
             'nombre'=>$request['nombre'],
             'rif'=>$request['rif'],
@@ -44,7 +53,7 @@ class ControladorInstitucion extends Controller
             'clave'=>bcrypt($request['password']),
         ]);
 
-        return "Institucion registrada";
+        return "Usuario registrado";*/
     }
 
     /**
