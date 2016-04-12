@@ -8,7 +8,6 @@
     {!!Html::script('js/jquery.min.js') !!}
     {!!Html::script('js/bootstrap.min.js') !!}
 
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Cinema Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -26,7 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="header">
             <div class="top-header">
                 <div class="logo">
-                    <a href="/"><img src="http://localhost:8000/images/logo.png" alt="" /></a>
+                    <a href="/"><img src="http://localhost:8000/images/logo4.png" alt="" /></a>
                     <p>MaraLibros C.A </p>
                 </div>
                 <div class="collapse navbar-collapse">
@@ -53,21 +52,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             </div>
             @yield('content')
-            <div class="news">
+        <div class="news">
 
-                <div class="col-md-6 news-right-grid">
+            <div class="col-md-6 news-right-grid">
 
-                    <div class="news-grid">
+                <div class="news-grid">
 
-                    </div>
-                    <a class="more" href="#">MORE</a>
                 </div>
-                <div class="clearfix"></div>
+                <a class="more" href="#">MORE</a>
             </div>
-
+            <div class="clearfix"></div>
         </div>
+
+    </div>
+    <div class="pie">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                   
+                </div>
+                <div class="col-md-4 text-center" style="margin-top:50px;">
+                    <p class="textopie">Creado por: SoftMOB c.a &copy; 2016</p>
+                    <p class="textopie"> Email: SoftMOB@gmail.com</p>
+                    <p class="textopie">Números Telefónicos:  + 58 281-2769049</p>
+                    <p class="textopie">                      + 58 412-9471756</p>
+                </div>
+                <div class="col-md-4">
+                   
+                </div>
+            </div>
+       
+              
+        </div> 
     </div>
 </div>
+ 
+
+</div> 
+
 {!!Html::script('js/script.js') !!}
 <div class="clearfix"></div>
 </body>

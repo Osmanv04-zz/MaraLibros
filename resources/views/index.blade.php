@@ -79,13 +79,30 @@
             <script type="text/javascript" src="js/jquery.flexisel.js"></script>
         </div>
         -->
+   <div class="container">
+        <div class="row">
+            <div class="col-md-3" >
+                <img src="http://localhost:8000/images/logo.png" class="img-rounded center-block" style="margin-top:20px;">
+             </div>
+            <div class="textopresentacion">
+                <div class="col-md-8" style="margin-top:7px; border-left: 1px solid black">
+                    <p>MaraLibros, su editorial favorita y mayor confianza, le ofrece los textos de educación primaria con la mejor calidad en material y contenido. Visítenos, registrese y disfrute de los beneficios que le ofrecemos, solicite su presupuesto y con gusto le atenderemos.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="margin-top:10px;" id="textobuscados";>
+                <p>LIBROS MAS BUSCADOS</p>
+            </div>
+        </div>
     </div>
+   
     <div class="more-reviews">
         <ul id="flexiselDemo2">
-            <li><img src="images/m1.jpg" alt=""/></li>
-            <li><img src="images/m2.jpg" alt=""/></li>
-            <li><img src="images/m3.jpg" alt=""/></li>
-            <li><img src="images/m5.jpg" alt=""/></li>
+            <li><img src="images/portada1.png" alt=""/></li>
+            <li><img src="images/portada2.png" alt=""/></li>
+            <li><img src="images/portada3.png" alt=""/></li>
+            <li><img src="images/portada4.jpeg" alt=""/></li>
         </ul>
         <script type="text/javascript">
             $(window).load(function() {

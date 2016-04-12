@@ -3,9 +3,11 @@
 namespace MaraLibros\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use MaraLibros\Institucion;
 use MaraLibros\Http\Requests;
 use MaraLibros\Http\Controllers\Controller;
+use MaraLibros\Http\Requests\InstitucionRequest;
+use Validator;
 
 class ControladorInstitucion extends Controller
 {
@@ -16,7 +18,7 @@ class ControladorInstitucion extends Controller
      */
     public function index()
     {
-        //
+        return  Institucion::all();
     }
 
     /**
@@ -35,25 +37,53 @@ class ControladorInstitucion extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
-        echo "usuario en store";
-        if($request->ajax()){
-            echo "entro en el ajax";
-            return response()->json([
-                "mensaje"=>$request->all()
-            ]);
-        }
-        else
-            echo 'no entro en el ajax';
-       /**
-        \MaraLibros\Institucion::create([
-            'nombre'=>$request['nombre'],
-            'rif'=>$request['rif'],
-            'correo'=>$request['correo'],
-            'clave'=>bcrypt($request['password']),
-        ]);
+    public function store(Request $request)
+    {
+      /* return "hola mundo";
+        echo "entrando en store";*/
+        $validator = Validator::make($request->all(), [
 
-        return "Usuario registrado";*/
+            'correo' => 'required|unique:institucion',
+            'nombre' => 'required',
+            'rif'=>'required|unique:institucion',
+            'direccion'=>'required|max:300',
+            'clave'=>'required',
+
+        ]);
+        if ($validator->fails()) {
+            $nombre=$validator->errors()->first('nombre');
+            $correo=$validator->errors()->first('correo');
+            $rif=$validator->errors()->first('rif');
+            $direccion = $validator->errors()->first('direccion');
+            $password = $validator->errors()->first('clave');
+            $errores=["error" => true, 'nombre' =>$nombre, 'correo' => $correo, 'rif' => $rif,
+             'direccion' => $direccion, 'clave' => $password];
+            //utf8_encode_deep($errores);
+
+            $response=response()->json($errores);
+            $response->header('Content-Type', 'application/json');
+            $response->header('charset', 'utf-8');
+            return $response;
+        }
+        else{
+
+
+            $institucion=new Institucion;
+            $institucion->nombre=$request['nombre'];
+            $institucion->rif=$request['rif'];
+            $institucion->correo=$request['correo'];
+            $institucion->direccion=$request['direccion'];
+            $institucion->clave=$request['clave'];
+
+            /* completa aqui los de mas campos */
+            $institucion->save();
+
+            $response=["error" => false,'respuesta' => true];
+
+            return $response;
+        }
+
+
     }
 
     /**
@@ -62,12 +92,8 @@ class ControladorInstitucion extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
+    public function show($id){}
+/**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

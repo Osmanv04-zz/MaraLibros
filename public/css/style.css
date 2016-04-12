@@ -46,7 +46,7 @@ label{
 }
 .top-header {
 	padding: 1.25em 3em 1.25em 2em;
-	background: rgba(255, 255, 255, 0.47);
+	background: url('../images/pie3.png') repeat-x;
 }
 .header {
 	#background: url('../images/header-bg.jpg') no-repeat 0px 0px;
@@ -2212,5 +2212,25 @@ font-weight: 700;
 }
 
 .textopresentacion{
-	color:#050E8C;	
+	color:#050E8C;
+	text-align: justify;	
+	font-size: 18px;
+
+}
+.pie{
+	background: url('../images/pie3.png') repeat-x;
+	height: 180px;
+}
+.textopie{
+	font-size: 15px;
+    color:#FFFFFF;}
+
+#textobuscados{
+	color:#050E8C;
+	font-size: 24px;
+	font-weight: 900;
+    padding-top: 80px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
 }
